@@ -26,7 +26,7 @@ This mobile application is my submission for the Future Business Leaders of Amer
 - Enable usb storage on the target android device (API 22+)
 - Connect the target android device to the computer, wait for installation
 - Copy the .apk from the computer to the target android device
-- Turn of usb storage on the target android device and disable usb storage
+- Turn off usb storage on the target android device and disable usb storage
 - Disconnect the target android device from the computer
 - Enable application installation from "unknown sources" in the target android device's settings
 - Navigate to the .apk in the target android device's file manager
@@ -165,7 +165,7 @@ I developed the backend of my application using Amazon Web Services' [Serverless
 </p>
 
 ### Future Development
-
+In my future devolpment I would like to add more features to app such as viewing grades, a modual for teacher access, diffrent view modes for parents so they can help their child stay on top of their assigments and more. In the next stage of the app I also want to add an area for students to get hall passes, bathroom passes, and get push notfications about assigments. This app will become a "one-stop shop" for all student, teacher and parent needs relating to school. 
 
 ## Authors
 
