@@ -22,7 +22,7 @@ This mobile application is my submission for the Future Business Leaders of Amer
 
 ## Installation Instructions
 
-- Download the .apk to your computer
+- Download the app-release.apk file to your computer
 - Enable usb storage on the target android device (API 22+)
 - Connect the target android device to the computer, wait for installation
 - Copy the .apk from the computer to the target android device
