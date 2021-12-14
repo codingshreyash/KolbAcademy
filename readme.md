@@ -98,7 +98,7 @@ On the menu tab, users can see what the Kolb Academy cafeteria will be serving i
 
 On the calendar tab, users can view all of the exciting events happening at Kolb Academy. Users are presented with a scrollable calendar that allows for a seamless events unencumbered by button presses and dropdown menus. Dates with events have a blue circle underneath them. 
 
-When clicked, the main calendar view retracts and users are can see the events listed in the selected week along with the time and location of each event.
+When clicked, the main calendar view retracts and users can see the events listed in the selected week along with the time and location of each event.
 
 When an event is clicked, a modal appears provided users with the ability to view and edit all information pertaining to the event. As is the case with other screens, all changes made in the modal are persisted in the database and changes are reflected for all users in real-time
 
@@ -107,7 +107,7 @@ When an event is clicked, a modal appears provided users with the ability to vie
     <img src="./Screenshots/activities_demo.gif" width="300">
 </p>
 
-On the activities tab, users can view fun ways to stay involved at Kolb Academy at make the most of their time as students. Here, users scroll through the top pane to see various clubs and teams they have the option of joining.
+On the activities tab, users can view fun ways to stay involved at Kolb Academy and make the most of their time as students. Here, users scroll through the top pane to see various clubs and teams they have the option of joining.
 
 When a club or team is clicked, the top card reflects the days and time it meets at as well as if it meets seasonally or year round.
 
