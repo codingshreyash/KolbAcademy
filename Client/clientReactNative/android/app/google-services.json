@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1009417062948",
+    "firebase_url": "https://wingman-528ce.firebaseio.com",
+    "project_id": "wingman-528ce",
+    "storage_bucket": "wingman-528ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009417062948:android:4058d6a2fb5f6c1437e6b1",
+        "android_client_info": {
+          "package_name": "com.clientreactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009417062948-dlb3vk68ts2m6p0qd5gshp9cqcigeegu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.clientreactnative",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1009417062948-caioese7u9fill17ie8vm14od2dugm1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIROuQj_mrOIw63n8hwbqD4yUMm8pqvzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009417062948-caioese7u9fill17ie8vm14od2dugm1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

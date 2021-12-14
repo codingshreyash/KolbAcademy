@@ -1,0 +1,232 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-fbla
+
+  infrastructure specification for sam-fbla
+
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+
+  DynamoCoursesTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: fbla_courses_table
+      PrimaryKey:
+        Name: clientId
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+  
+  DynamoEmailsTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: fbla_emails_table
+      PrimaryKey:
+        Name: clientId
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+  
+  DynamoUsersTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: fbla_users_table
+      PrimaryKey:
+        Name: emailAddress
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+  DynamoMenuTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: fbla_menu_table
+      PrimaryKey:
+        Name: week
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+  
+  DynamoActivitiesTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: fbla_activities_table
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+  DynamoEventsTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: fbla_events_table
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+
+  CoursesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: courses_function/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CoursesEvent:
+          Type: Api
+          Properties:
+            Path: /courses
+            Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+  
+  EmailsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: emails_function/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        EmailsEvent:
+          Type: Api
+          Properties:
+            Path: /emails
+            Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+        
+  MenuFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: menu_function/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        MenuEvent:
+          Type: Api
+          Properties:
+            Path: /menu
+            Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+  
+  ActivitiesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: activities_function/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        MenuEvent:
+          Type: Api
+          Properties:
+            Path: /activities
+            Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+
+  EventsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: events_function/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        MenuEvent:
+          Type: Api
+          Properties:
+            Path: /events
+            Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+  
+  UsersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: users_function/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        MenuEvent:
+          Type: Api
+          Properties:
+            Path: /users
+            Method: post
+      Policies:
+        - AmazonDynamoDBFullAccess
+  
+
+
+Outputs:
+  CoursesApi:
+    Description: "API Gateway endpoint URL for Prod stage for Courses function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/courses/"
+  CoursesFunction:
+    Description: "Courses Lambda Function ARN"
+    Value: !GetAtt CoursesFunction.Arn
+  CoursesFunctionIamRole:
+    Description: "Implicit IAM Role created for Courses function"
+    Value: !GetAtt CoursesFunctionRole.Arn
+
+  EmailsApi:
+    Description: "API Gateway endpoint URL for Prod stage for Emails function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/emails/"
+  EmailsFunction:
+    Description: "Emails Lambda Function ARN"
+    Value: !GetAtt EmailsFunction.Arn
+  EmailsFunctionIamRole:
+    Description: "Implicit IAM Role created for Emails function"
+    Value: !GetAtt EmailsFunctionRole.Arn
+
+  MenuApi:
+    Description: "API Gateway endpoint URL for Prod stage for Menu function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/menu/"
+  MenuFunction:
+    Description: "Menu Lambda Function ARN"
+    Value: !GetAtt MenuFunction.Arn
+  MenuFunctionIamRole:
+    Description: "Implicit IAM Role created for Menu function"
+    Value: !GetAtt MenuFunctionRole.Arn
+
+  ActivitiesApi:
+    Description: "API Gateway endpoint URL for Prod stage for Activities function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/activities/"
+  ActivitiesFunction:
+    Description: "Activities Lambda Function ARN"
+    Value: !GetAtt ActivitiesFunction.Arn
+  ActivitiesFunctionIamRole:
+    Description: "Implicit IAM Role created for Activities function"
+    Value: !GetAtt ActivitiesFunctionRole.Arn
+
+  EventsApi:
+    Description: "API Gateway endpoint URL for Prod stage for Events function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/events/"
+  EventsFunction:
+    Description: "Events Lambda Function ARN"
+    Value: !GetAtt EventsFunction.Arn
+  EventsFunctionIamRole:
+    Description: "Implicit IAM Role created for Events function"
+    Value: !GetAtt EventsFunctionRole.Arn
+  
+  UsersApi:
+    Description: "API Gateway endpoint URL for Prod stage for Users function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/users/"
+  UsersFunction:
+    Description: "Users Lambda Function ARN"
+    Value: !GetAtt UsersFunction.Arn
+  UsersFunctionIamRole:
+    Description: "Implicit IAM Role created for Users function"
+    Value: !GetAtt UsersFunctionRole.Arn

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1009417062948-des6q4nhb39tv6eao0m49qst218sdbcm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1009417062948-des6q4nhb39tv6eao0m49qst218sdbcm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1009417062948-dlb3vk68ts2m6p0qd5gshp9cqcigeegu.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCWlcbCGHSsE6LDFyOD2A8zHnA1F_bwPXY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1009417062948</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.clientReactNativeWingman</string>
+	<key>PROJECT_ID</key>
+	<string>wingman-528ce</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wingman-528ce.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1009417062948:ios:73bf8165b091259837e6b1</string>
+	<key>DATABASE_URL</key>
+	<string>https://wingman-528ce.firebaseio.com</string>
+</dict>
+</plist>
